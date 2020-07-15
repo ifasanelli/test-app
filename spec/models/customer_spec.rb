@@ -48,4 +48,11 @@ RSpec.describe Customer, type: :model do
     expect(customer.gender).to eq('M')
     expect(customer.vip).to be true
   end
+
+  it 'Sequence' do
+    customer1 = create(:customer)
+    customer2 = create(:customer)
+    puts customer1.email
+    puts customer2.email
+  end
 end
