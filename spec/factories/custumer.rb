@@ -11,7 +11,7 @@ FactoryBot.define do
     #email { Faker::Internet.email }
     sequence(:email) { |n| "email-num-#{n}@email.com" }
     #sequence(:email, 35) { |n| "email-num-#{n}@email.com" }
-    #sequence(:email, 'a') { |n| "email-num-#{n}@email.com" }
+    #sequence(:email, 'a') { |n| "email-num-#{n}@email.com" } 
 
     trait :male do
       gender { 'M' }
