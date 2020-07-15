@@ -5,7 +5,7 @@ FactoryBot.define do
     vip { false }
     days_to_pay { 15 }
 
-    factory :custumer_vip do
+    factory :customer_vip do
       vip { true }
       days_to_pay { 30 }
     end
