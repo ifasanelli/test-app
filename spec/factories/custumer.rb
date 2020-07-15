@@ -10,10 +10,24 @@ FactoryBot.define do
     vip { false }
     days_to_pay { 15 }
 
-    factory :customer_vip do
+    trait :male do
+      gender { 'M' }
+    end
+
+    trait :female do
+      gender { 'F' }
+    end
+
+    trait :vip do
       vip { true }
       days_to_pay { 30 }
     end
+
+    factory :customer_male, traits: [:male]
+    factory :customer_female, traits: [:female]
+    factory :customer_vip, traits: [:vip]
+    factory :customer_male_vip, traits: [:vip, :male]
+    factory :customer_female_vip, traits: [:vip, :female]
 
     after(:create) do |customer, evaluator|
       customer.name.upcase! if evaluator.upcased

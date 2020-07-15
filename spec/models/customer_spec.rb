@@ -7,7 +7,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it '#full_name' do
-    customer = create(:customer)
+    customer = create(:buyer)
     expect(customer.full_name).to start_with('Sr(a). ')
   end
 
@@ -21,8 +21,8 @@ RSpec.describe Customer, type: :model do
   it 'Usando o attributes_for' do
     attrs = attributes_for(:customer)
     attrs1 = attributes_for(:customer_vip)
-    puts attrs
-    puts attrs1
+    # puts attrs
+    # puts attrs1
   end
 
   it 'Usando o attributes_for 2' do
@@ -35,5 +35,17 @@ RSpec.describe Customer, type: :model do
   it 'Atributo Transitório' do
     customer = create(:customer, upcased: true)
     expect(customer.name.upcase).to eq(customer.name)
+  end
+
+  it 'Cliente Masculino' do
+    customer = create(:customer_male)
+    expect(customer.gender).to eq('M')
+    expect(customer.vip).to be false
+  end
+
+  it 'Cliente Masculino VIP' do
+    customer = create(:customer_male_vip)
+    expect(customer.gender).to eq('M')
+    expect(customer.vip).to be true
   end
 end
