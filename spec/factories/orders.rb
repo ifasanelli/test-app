@@ -4,6 +4,6 @@ FactoryBot.define do
     customer
 
     # Sobrescrevendo factories
-    # association :customer. factory: :customer
+    # association :customer, factory: :customer
   end
 end
